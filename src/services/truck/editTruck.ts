@@ -36,7 +36,7 @@ const createEditTruck = ({ Truck }: IDependencies): FnEditTruck => {
       const truck = await Truck.findOne({ id })
 
       if (!truck) {
-        return utils.newServiceResponse(null, 'Cannot find user.')
+        return utils.newServiceResponse(null, 'Cannot find truck.')
       }
 
       if (brand) {
@@ -87,7 +87,6 @@ const createEditTruck = ({ Truck }: IDependencies): FnEditTruck => {
         'Something went wrong, please try again'
       )
     }
-    return utils.newServiceResponse(null, 'No vehicles found')
   }
 }
 
