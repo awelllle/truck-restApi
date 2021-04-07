@@ -9,9 +9,13 @@ export interface ILocationSchema extends Document {
 const newLocationSchema = (): Schema<ILocationSchema> => {
   const LocationSchema = new mongoose.Schema({
     truck: String,
-    coordinates: Array
+    coordinates: {
+      type: ['Point'],
+      coordinates: []
+    }
   })
 
+  LocationSchema.index({ coordinates: '2dsphere' })
   return LocationSchema
 }
 
