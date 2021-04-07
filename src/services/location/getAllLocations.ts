@@ -11,7 +11,7 @@ export type FnGetAllLocations = (
 
 const getAllLocations = ({ Location }: IDependencies): FnGetAllLocations => {
   return async (id) => {
-    const truckLocations = await Location.find({ id })
+    const truckLocations = await Location.find({ truck: id })
 
     if (truckLocations) {
       return utils.newServiceResponse(truckLocations)
