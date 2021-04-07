@@ -16,8 +16,6 @@ export interface ITruckSchema extends Document {
   trips?: string
   year?: string
   userId?: string
-
-  coordinates: Array<number>
 }
 
 const newTruckSchema = (): Schema<ITruckSchema> => {
@@ -35,8 +33,7 @@ const newTruckSchema = (): Schema<ITruckSchema> => {
     transmission: String,
     trips: String,
     year: String,
-    userId: String,
-    coordinates: Array
+    userId: String
   })
 
   return TruckSchema

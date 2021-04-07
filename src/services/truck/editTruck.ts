@@ -29,8 +29,7 @@ const createEditTruck = ({ Truck }: IDependencies): FnEditTruck => {
     truckModel,
     price,
     transmission,
-    year,
-    coordinates
+    year
   ) => {
     try {
       const truck = await Truck.findOne({ id })
@@ -73,10 +72,6 @@ const createEditTruck = ({ Truck }: IDependencies): FnEditTruck => {
 
       if (year) {
         truck.year = year
-      }
-
-      if (coordinates) {
-        truck.coordinates = coordinates
       }
 
       await truck.save()

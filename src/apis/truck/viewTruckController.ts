@@ -11,13 +11,13 @@ const createViewTruckController = ({
 }: Dependencies): FnController => {
   return async (req, res) => {
     const { id } = req.params
-    const { result: candidates, error } = await viewTruck(id)
+    const { result: truck, error } = await viewTruck(id)
 
     if (error) {
       return utils.sendErrorResponse(res, {}, error)
     }
 
-    return utils.sendSuccessResponse(res, { candidates }, 'Here you go!')
+    return utils.sendSuccessResponse(res, { truck }, 'Here you go!')
   }
 }
 export default createViewTruckController
