@@ -29,8 +29,7 @@ const createAppApi = (app: express.Express): void => {
   const truckRouter = createRouter(app, '/truck')
 
   truckRouter.get('/', truckApi.getAllController)
-  truckRouter.get('/edit', truckApi.editTruckController)
-  truckRouter.get('/saveLocation/:id', truckApi.editTruckController)
+  truckRouter.put('/edit', truckApi.editTruckController)
   truckRouter.put('/add', truckApi.addTruckController)
   truckRouter.get('/view/:id', truckApi.viewTruckController)
 
