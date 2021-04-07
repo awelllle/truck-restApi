@@ -7,11 +7,11 @@ type IDependencies = ILocationModel
 
 export type FnGetAllLocations = (
   id: string
-) => Promise<IServiceResponse<ILocationSchema | null>>
+) => Promise<IServiceResponse<Array<ILocationSchema> | null>>
 
 const getAllLocations = ({ Location }: IDependencies): FnGetAllLocations => {
   return async (id) => {
-    const truckLocations = await Location.findOne({ id })
+    const truckLocations = await Location.find({ id })
 
     if (truckLocations) {
       return utils.newServiceResponse(truckLocations)
