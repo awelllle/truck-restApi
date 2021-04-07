@@ -8,8 +8,8 @@ interface Dependencies {
 
 const createSaveLocationController = ({ save }: Dependencies): FnController => {
   return async (req, res) => {
-    const { id, coordinates } = req.body
-    const { result: locations, error } = await save(id, coordinates)
+    const { truck, coordinates } = req.body
+    const { result: locations, error } = await save(truck, coordinates)
 
     if (error) {
       return utils.sendErrorResponse(res, {}, error)
