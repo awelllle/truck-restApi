@@ -11,7 +11,7 @@ export interface ITruckSchema extends Document {
   inspected?: boolean
   location?: string
   truckModel?: string
-  price?: string
+  price?: number
   transmission?: string
   trips?: string
   year?: string
@@ -31,7 +31,7 @@ const newTruckSchema = (): Schema<ITruckSchema> => {
     inspected: Boolean,
     location: String,
     truckModel: String,
-    price: String,
+    price: Number,
     transmission: String,
     trips: String,
     year: String,

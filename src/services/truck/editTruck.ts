@@ -13,7 +13,7 @@ export type FnEditTruck = (
   inspected: boolean,
   location: string,
   truckModel: string,
-  price: string,
+  price: number,
   transmission: string,
   year: string,
   coordinates: Array<number>
